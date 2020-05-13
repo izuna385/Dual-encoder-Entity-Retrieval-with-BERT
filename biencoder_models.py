@@ -143,23 +143,3 @@ class WrappedModel_for_entityencoding(Model):
 
     def return_entity_encoder(self):
         return self.entity_encoder
-
-class FixedNegatives_Biencoder(Model):
-    def __init__(self, args, input_dim,
-                 mention_encoder: Seq2VecEncoder,
-                 entity_encoder,
-                 vocab):
-        super().__init__(vocab)
-        self.args = args
-        self.mention_encoder = mention_encoder
-        self.output_dim_from_mention_encoder = self.mention_encoder.get_output_dim()
-        self.accuracy = CategoricalAccuracy()
-        self.istrainflag = 1
-        self.BCEWloss = nn.BCEWithLogitsLoss()
-        self.BCEloss = nn.BCELoss()
-        self.cossimloss = nn.CosineEmbeddingLoss()
-        self.context2entityemb = nn.Linear(self.output_dim_from_mention_encoder , input_dim)
-        self.entity_encoder = entity_encoder
-        self.scalingfactor = nn.Parameter(torch.FloatTensor([1.0]).cuda())
-        print('NotImplemented Currently')
-        exit()

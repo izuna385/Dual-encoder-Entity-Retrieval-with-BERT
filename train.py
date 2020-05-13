@@ -53,8 +53,6 @@ def main():
     elif opts.model_for_training == 'blink_implementation_inbatchencoder':
         entity_encoder = Pooler_for_cano_and_def(args=opts, word_embedder=textfieldEmbedder)
         model = InBatchBLINKBiencoder(args=opts, mention_encoder=mention_encoder, entity_encoder=entity_encoder, vocab=vocab)
-    elif opts.model_for_training == 'fixednegatives_biencoder':
-        raise NotImplementedError
     else:
         print('currently', opts.model_for_training,'are not supported')
         raise NotImplementedError
