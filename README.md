@@ -3,6 +3,8 @@ Re-implementation of [[Gillick et al., '19]](https://arxiv.org/abs/2004.03555) a
 <div align="center">
 <img src="./img/dual_encoder.png" width=70%>
 </div>
+
+
 # Requirements
 See `requirements.txt`.
 
