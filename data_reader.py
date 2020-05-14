@@ -195,7 +195,6 @@ class FixedDatasetTokenizedReader(DatasetReader):
 
         '''
         gold_cui, gold_type, gold_surface_mention, targetanchor_included_sentence = line.split('\t')
-        gold_cui = gold_cui.replace('UMLS:', '')
         tokenized_context_including_target_anchors = self.tokenizer_custom(txt=targetanchor_included_sentence)
         raw_sentence_noanchor, sfm_mention, left_context_include_mention, right_context_include_mention = self.left_right_mention_sentence_from_anchorincludedsentence_returner(
             split_txt=tokenized_context_including_target_anchors)

@@ -1,8 +1,8 @@
 # Dual-encoder-with-BERT
 Re-implementation of [[Gillick et al., '19]](https://arxiv.org/abs/2004.03555) and [[Humeau et al., '20]](https://arxiv.org/abs/1905.01969) 's bi-encoder.
-
+<div align="center">
 <img src="./img/dual_encoder.png" width=70%>
-
+</div>
 # Requirements
 See `requirements.txt`.
 
