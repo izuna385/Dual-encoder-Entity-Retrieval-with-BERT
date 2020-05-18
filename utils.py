@@ -189,18 +189,11 @@ class KBConstructor_fromKGemb:
         assert self.args.dataset in ['xxx','yyy','zzz']
 
         if self.args.dataset in ['xxx', 'yyy']:
-            cui2idx_path = './../src/cui2idx.json'
-            idx2cui_path = './../src/idx2cui.json'
-            cui2emb_path = './../src/cui2emb.pkl'
-            cui2cano_path = './../src/cui2cano.json'
-            cui2def_path = './../src/cui2def.json'
-
-        elif self.args.dataset in 'zzz':
-            cui2idx_path = './../src/cui2idx.json'
-            idx2cui_path = './../src/idx2cui.json'
-            cui2emb_path = './../src/cui2emb.pkl'
-            cui2cano_path = './../src/cui2cano.json'
-            cui2def_path = './../src/cui2def.json'
+            cui2idx_path = './dataset/cui2idx.json'
+            idx2cui_path = './dataset/idx2cui.json'
+            cui2emb_path = './dataset/cui2emb.pkl'
+            cui2cano_path = './dataset/cui2cano.json'
+            cui2def_path = './dataset/cui2def.json'
 
         else:
             cui2idx_path, idx2cui_path, cui2emb_path, cui2cano_path, cui2def_path = ['dummy' for i in range(5)]

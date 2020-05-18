@@ -7,7 +7,7 @@ class Biencoder_params:
         parser = argparse.ArgumentParser(description='Entity linker')
         parser.add_argument('-debug', action='store', default=False, type=strtobool)
         parser.add_argument('-debug_for_entity_encoder', action='store', default=False, type=strtobool)
-        parser.add_argument('-dataset', action="store", default="wiki", dest="dataset", type=str)
+        parser.add_argument('-dataset', action="store", default="xxx", dest="dataset", type=str)
 
         parser.add_argument('-cached_instance', action='store', default=False, type=strtobool)
         parser.add_argument('-lr', action="store", default=5e-6, type=float)
