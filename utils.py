@@ -239,7 +239,7 @@ class ForOnlyFaiss_KBIndexer:
     def KBmatrixloader(self):
         KBemb = np.random.randn(len(self.cui2idx.keys()), self.kbemb_dim).astype('float32')
         for idx, cui in self.idx2cui.items():
-            KBemb[idx] = self.cui2emb[cui]
+            KBemb[idx] = self.cui2emb[cui].astype('float32')
 
         return KBemb
 

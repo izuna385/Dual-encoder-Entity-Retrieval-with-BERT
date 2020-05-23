@@ -42,11 +42,7 @@ def main():
         mention_encoder = Concatenate_Right_and_Left_MentionEncoder(args=opts, input_dim=emb_dim, word_embedder=textfieldEmbedder)
 
     current_cui2idx, current_idx2cui, current_cui2emb, current_cui2cano, current_cui2def = reader_for_mentions.currently_stored_KB_dataset_returner()
-    fortrainigmodel_faiss_stored_kb_kgemb = ForOnlyFaiss_KBIndexer(args=opts,
-                                                             input_cui2idx=current_cui2idx,
-                                                             input_idx2cui=current_idx2cui,
-                                                             input_cui2emb=current_cui2emb,
-                                                             search_method_for_faiss=opts.search_method_before_re_sorting_for_faiss)
+
     if opts.model_for_training == 'biencoder':
         entity_encoder = Pooler_for_cano_and_def(args=opts, word_embedder=textfieldEmbedder)
         model = InBatchBiencoder(args=opts, mention_encoder=mention_encoder, entity_encoder=entity_encoder, vocab=vocab, input_dim=emb_dim)
