@@ -8,6 +8,7 @@ python3 train.py -num_epochs 1
 ```
 
 For further speednizing, you can use multi gpus.
+
 `CUDA_VISIBLE_DEVICES=0,1 python3 train.py -num_epochs 1 -cuda_devices 0,1`
 
 ## Description
