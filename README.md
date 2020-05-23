@@ -48,6 +48,11 @@ Also, you need `cui2idx.json`, `idx2cui.json`, `cui2cano.json`, and `cui2def.jso
 
   * The required formats of datasets can be confirmed at `./dataset/` directory.
 
+# To-do list
+
+* Make dataset creation more easier.
+
+* Pip packaging.
 
 # LICENSE 
 MIT
