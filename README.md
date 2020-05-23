@@ -7,6 +7,9 @@ cd Dual-encoder-with-BERT
 python3 train.py -num_epochs 1
 ```
 
+For further speednizing, you can use multi gpus.
+`CUDA_VISIBLE_DEVICES=0,1 python3 train.py -num_epochs 1 -cuda_devices 0,1`
+
 ## Description
 Re-implementation of [[Gillick et al., '19]](https://arxiv.org/abs/2004.03555) and [[Humeau et al., '20]](https://arxiv.org/abs/1905.01969) 's bi-encoder.
 <div align="center">
