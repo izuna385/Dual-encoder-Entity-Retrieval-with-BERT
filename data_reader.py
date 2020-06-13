@@ -340,15 +340,16 @@ class AllEntityCanonical_and_Defs_loader(DatasetReader):
         canonical_plus_definition.append('[CLS]')
 
         canonical = self.cui2cano[cui]
-        canonical_tokens = [Token(split_word) for split_word in self.tokenizer_custom(txt=canonical)]
+        canonical_tokens = [split_word for split_word in self.tokenizer_custom(txt=canonical)]
         canonical_plus_definition += canonical_tokens[:self.args.max_canonical_len]
 
         canonical_plus_definition.append(self.canonical_and_def_connect_token)
 
         definition = self.cui2def[cui]
-        definition_tokens = [Token(split_word) for split_word in self.tokenizer_custom(txt=definition)]
+        definition_tokens = [split_word for split_word in self.tokenizer_custom(txt=definition)]
         canonical_plus_definition += definition_tokens[:self.args.max_def_len]
 
         canonical_plus_definition.append('[SEP]')
 
-        return {'cano_and_def_concatenated':[Token(split_word_) for split_word_ in canonical_plus_definition], 'cui_idx': idx}
+        return {'cano_and_def_concatenated':[ Token(split_word_) for split_word_ in canonical_plus_definition],
+                'cui_idx': idx}
