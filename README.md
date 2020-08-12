@@ -25,20 +25,39 @@ Re-implementation of [[Gillick et al., '19]](https://arxiv.org/abs/2004.03555) a
 
 []()
 # Requirements
-See `requirements.txt`. 
-If `allennlp` is not installed to your local environments, follow [Allennlp documentation](https://github.com/allenai/allennlp). 
+## Packages
+See `requirements.txt`.
+If `allennlp` is not installed to your local environments, follow [Allennlp documentation](https://github.com/allenai/allennlp).
 
-Also, you need `cui2idx.json`, `idx2cui.json`, `cui2cano.json`, and `cui2def.json` for encoding entities of specified KB (, or, entity set).
+## Files
+### Entities
+You need `cui2idx.json`, `idx2cui.json`, `cui2cano.json`, and `cui2def.json` for encoding entities of specified KB (, or, entity set).
 
-* `cui2idx.json` and `idx2json` 
+* `cui2idx.json` and `idx2json`
 
   cui means one unique id for each entity, like `D0002131` of `United stated of America` in DBpedia.
-  
+
   idx is integer for each cui.
-  
+
 * `cui2cano.json` and `cui2def.json`
 
   Canonical names specify entity name for each entity. Canonical names and Definitions (first sentence of definition is often used here) must be split to tokens.
+
+### Annotated mentions
+You also needs annotated train/dev/test mentions.
+See `./mention_dump_dir/xxx/` for more details.
+
+* id2line.json
+  This contains all annotated mentions including train, dev and test.
+  ```
+  "0": "D000001\tPER\tHarry\tThe success of the books and films has allowed the <target> Harry Potter </target> franchise ..."
+  ```
+
+  * "0" : mention uniq id.
+  * "D000001": Gold entity for each mention
+  * "PER": Type, like ORG, LOC, and MISC. You can use dummy tag because this type is not used for training.
+  * "Harry Potter": Raw mention string.
+  * "The success ...": One sentence which contains one mention. The mention is wrapped with special tokens, `<target>,</target>.`  
 
 # How to run experiments immediately
 
@@ -58,5 +77,5 @@ Also, you need `cui2idx.json`, `idx2cui.json`, `cui2cano.json`, and `cui2def.jso
 
 * Pip packaging.
 
-# LICENSE 
+# LICENSE
 MIT
